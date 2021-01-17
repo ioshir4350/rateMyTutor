@@ -87,20 +87,22 @@
     bottom: 0;
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
-    cursor: pointer;
+    
   }
 
   .popup{
     height: 60vh;
     width: 100vh;
     padding:10px;
-    background-color: black;
-    position: absolute;
+    background-color: rgb(41, 35, 117);
+    /* position: absolute; */
     z-index: 3;
-    margin-left: 8%;
+    margin-left: auto;
+    margin-top: 20vh;
+    margin-right: auto;
     top:100px;
     text-align: center;
-
+    border-radius: 10px;
     animation: popup 1.5s;
     transform: rotate3d(0, 0, 0);
     overflow: scroll;
