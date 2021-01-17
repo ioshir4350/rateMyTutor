@@ -12,6 +12,12 @@ function Tutor(){
 
     let [companyObj, setCompanyObj] = useState({})
 
+    let [popup, setPopUp] = useState(false)
+
+    const popUpHandler = () => {
+        setPopUp(prev => !prev)
+    }
+
     // const [value, setValue] = useState({
     //     name: '',
     //     comment: ''
@@ -63,16 +69,25 @@ function Tutor(){
         
         <div className="tutor-container">
                 <div className="info">
-                    <input className="form-control mb-4" name="name" value={name} placeholder="Enter your name" onChange={(event) => setName(event.target.value)} />
-                    <textarea className="form-control mb-2" name="comment" placeholder="Add a comment!" 
-                    value={comment} 
-                    onChange={(event) => setComment(event.target.value)}>
-                    </textarea>
-                    <button onClick={submitComment} className="navButton">Submit</button>
+                    {popup ? 
+                    <div className="overlay">
+                        <div className="popup">
+                            <button className="close-btn" onClick={popUpHandler}><span className="x-text">&#10005;</span></button>
+                            <textarea className="form-control mb-2 comment-box" name="comment" placeholder="Add a comment!" 
+                            value={comment} 
+                            onChange={(event) => setComment(event.target.value)}>
+                            </textarea>
+                            <button onClick={submitComment} className="navButton">Submit</button>
+                        </div> 
+                   </div>
+                    : null}
+                    
+                    
                     <img></img>
                     <h1>{tutorState.Fname + " " + tutorState.Lname}</h1>
                     <a href={"/company/" + companyObj.id} className="nav-item">{companyObj.companyName}</a>
                     <h2> {tutorState.companyRatings} / 5 </h2>
+                    <button onClick={popUpHandler} className="navButton">Add Comment</button>
                 </div>
             
                 <Comments tutorState={tutorState} /> 

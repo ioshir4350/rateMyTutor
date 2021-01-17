@@ -107,15 +107,23 @@ function HomePage() {
 
     }, [searchVal])
 
-    
-
-
-    
+    let classes = {
+        searchDiv: "search-div-shifted-down"
+    } 
+    if (searchResults.length > 0){
+        classes.searchDiv = "search-div"
+    }
     
     return (
         <div>
             <div className="container-div"></div>
-                <div className="search-div">
+                {searchResults.length==0
+                ?
+                <div className="wrapper">
+                    <img src="booksnew.png" style={{height: '400px'}}></img>
+                </div>
+                :null}
+                <div className={classes.searchDiv}>
                     <button className="navButton" onClick={() => searchTypeHandler(true)}>Tutor</button>
                     <button className="navButton" onClick={() => searchTypeHandler(false)}>Company</button>
                     {searchType ? 

@@ -2,7 +2,23 @@
     height: 100%;
 }
 
+.x-text {
+  color: white;
+  font-size: medium;
 
+}
+
+.close-btn{
+  border: none;
+  background-color: black;
+  float: right;
+}
+
+.close-btn:hover{
+  color: white;
+  background-color: #F64C72;
+  transition: 0.5s;
+}
 
 .info{
     padding: 50px 50px 200px 50px;
@@ -15,6 +31,14 @@
     border-width: 0;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.comment-box{
+  margin-top: 60px;
+  width: 50% !important;
+  height: 70% !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .comment{
@@ -51,6 +75,55 @@
     height: 20px;
     font-family: Open Sans,Helvetica,Arial,sans-serif;
     position: relative;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .popup{
+    height: 60vh;
+    width: 100vh;
+    padding:10px;
+    background-color: black;
+    position: absolute;
+    z-index: 3;
+    margin-left: 8%;
+    top:100px;
+    text-align: center;
+
+    animation: popup 1.5s;
+    transform: rotate3d(0, 0, 0);
+    overflow: scroll;
+  }
+
+  @keyframes popup{
+    0% {transform: rotate3d(0, 0, 0);}
+    5% {transform: rotate3d(0, 1, 0, 45deg);}
+    10% {transform: rotate3d(0, 1, 0, 90deg);}
+    15% {transform: rotate3d(0, 1, 0, 135deg);}
+    20% {transform: rotate3d(0, 1, 0, 180deg);}
+    25% {transform: rotate3d(0, 1, 0, 225deg);}
+    30% {transform: rotate3d(0, 1, 0, 270deg);}
+    35% {transform: rotate3d(0, 1, 0, 315deg);}
+    40% {transform: rotate3d(0, 1, 0, 360deg);}
+    45% {transform: rotate3d(0, 1, 0, 315deg);}
+    50% {transform: rotate3d(0, 1, 0, 270deg);}
+    55% {transform: rotate3d(0, 1, 0, 225deg);}
+    60% {transform: rotate3d(0, 1, 0, 180deg);}
+    65% {transform: rotate3d(0, 1, 0, 135deg);}
+    70% {transform: rotate3d(0, 1, 0, 90deg);}
+    75% {transform: rotate3d(0, 1, 0, 45deg);}
+    100% {transform: rotate3d(0, 0, 0);}
   }
 
   .nav-item:after {    

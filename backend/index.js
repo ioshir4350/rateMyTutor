@@ -28,5 +28,5 @@ app.use('/api/tutors', tutorRoutes)
 app.use('/api/company', companyRoutes)
 
 app.listen(8000, () => {
-    console.log('api on 3001');
+    console.log('api on 8000');
 })

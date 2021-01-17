@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react'  
 
 function Header() {
 
     return (
         <div>
             <header className="header">
-                <a href="/"><h1 style={{color: 'white'}} className="logo">RateMyTutor</h1></a>
+                <marquee>Welcome to rateMyTutor</marquee>
+                <a href="/" style={{display: 'inline-block', width: '300px', float: 'left', marginLeft: '20px'}}><h1 style={{color: 'white'}} className="logo">RateMyTutor</h1></a>
                 {window.location.pathname === '/' ? 
                 <div className="navbar">
                     <button className="navButton">Login</button>
