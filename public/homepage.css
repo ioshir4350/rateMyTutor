@@ -1,0 +1,138 @@
+.header {
+    /* background-image:linear-gradient( rgb(41, 35, 117),  #2F2FA2); */
+    background-color:  rgb(41, 35, 117);
+    padding-top: 15px;
+    height: 80px;
+}
+
+.search-div {
+    height: 20vh;
+    
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 250px;
+    background-color: white;
+    padding-top: 20px;
+    border: solid black;
+    border-width: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar{
+    position: absolute;
+    right: 0;
+}
+
+.navButton{
+    border: solid #F64C72;
+    color: #F64C72;
+    background-color: transparent;
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.navButton:hover{
+    color: white;
+    background-color: #F64C72;
+    transition: 0.5s;
+}
+
+.container-div{
+    background-image:linear-gradient( rgb(41, 35, 117),  #2F2FA2);
+    height: 50vh;
+}
+
+.searchCard{
+    height: 20vh;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 250px;
+    background-color: white;
+    padding-top: 20px;
+    border: solid black;
+    border-width: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.searchR{
+    border-radius: 10px;
+}
+
+.results{
+    margin-top: 20px;
+}
+
+.logo {
+    width: 17%;
+    margin-left: 20px;
+    transform: skew(20deg);
+    position: relative;
+    animation: move 2s infinite;
+    background-color: green;
+}
+
+@keyframes move{
+    0% {
+        box-shadow: 0;
+        left: 0;
+        bottom: 0;
+    }
+    10% {
+        box-shadow: -10px 2px 2px 1px #006400;
+        left: 2px;
+        bottom: 2px;
+    }
+    20% {
+        box-shadow: -10px 4px 4px 1px #006400;
+        left: 4px;
+        bottom: 4px;
+    }
+    30% {
+        box-shadow: -10px 6px 6px 1px #006400;
+        left: 6px;
+        bottom: 6px;
+    }
+    40% {
+        box-shadow: -10px 8px 8px 1px #006400;
+        left: 8px;
+        bottom: 8px;
+    }
+    60% {
+        box-shadow: -10px 8px 8px 1px #006400;
+        left: 8px;
+        bottom: 8px;
+    }
+    70% {
+        box-shadow: -10px 6px 6px 1px #006400;
+        left: 6px;
+        bottom: 6px;
+    }
+    80% {
+        box-shadow: -10px 4px 4px 1px #006400;
+        left: 4px;
+        bottom: 4px;
+    }
+    90% {
+        box-shadow: -10px 2px 2px 1px #006400;
+        left: 2px;
+        bottom: 2px;
+    }
+    
+    100% {
+        box-shadow: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
