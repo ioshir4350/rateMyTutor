@@ -23,13 +23,24 @@ function Tutor(){
     //     comment: ''
     // })
 
-    const checker = ()=>{
-        console.log(tutorState.comments[0])
+    
+
+    const ratingAvgHandler= ()=>{
+        let sum = 0
+        let length = 0
+        for (const key in tutorState.companyRatings ){
+            sum += parseInt(tutorState.companyRatings[key])
+            length++
+        }
+        console.log(tutorState.companyRatings)
+        console.log(sum/length)
+        
+        return sum/length
     }
 
     
 
-    const [name, setName] = useState('')
+    const [rating, setRating] = useState('')
 
     const [comment, setComment] = useState('')
     
@@ -44,7 +55,7 @@ function Tutor(){
             tutorHandler(res.data)
         }
         )
-    }, [])
+    }, [tutorState])
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/company/' + tutorState.companyID)
@@ -56,7 +67,7 @@ function Tutor(){
 
     const submitComment = () => {
         const obj = {
-            tutorId: tutorID,
+            rating: rating,
             comment: comment
         }
         axios.post('http://localhost:8000/api/tutors/makeComment', obj)
@@ -74,9 +85,11 @@ function Tutor(){
                         <div className="popup">
                             <button className="close-btn" onClick={popUpHandler}><span className="x-text">&#10005;</span></button>
                             <h3 style={{color: 'white'}}>Please be honest with your comment! It will be removed if found false.</h3>
+                            <input name="rating" placeholder="Add a rating!" required
+                            onChange={(event) => setRating(event.target.value)} value={rating}/>
                             <textarea className="form-control mb-2 comment-box" name="comment" placeholder="Add a comment!" 
                             value={comment} 
-                            onChange={(event) => setComment(event.target.value)}>
+                            onChange={(event) => setComment(event.target.value)} required>
                             </textarea>
                             <button onClick={submitComment} className="navButton">Submit</button>
                         </div> 
@@ -85,7 +98,7 @@ function Tutor(){
 
                     <h1>{tutorState.Fname + " " + tutorState.Lname}</h1>
                     <a href={"/company/" + companyObj.id} className="nav-item">{companyObj.companyName}</a>
-                    <h2> {tutorState.companyRatings} / 5 </h2>
+                    <h2> {ratingAvgHandler()} / 5 </h2>
                     <button onClick={popUpHandler} className="navButton">Add Comment</button>
                 </div>
             

@@ -8,9 +8,9 @@ const axios = require('axios')
 async function makeComment(req, res) {
     console.log("______________________________________")
     console.log('makeComment');
-    console.log(req.body);
     const tutorID = req.body.tutorId
     const comment= req.body.comment
+    const rating = parseInt(req.body.rating)
     
     console.log('HERECOMMENT')
 
@@ -37,6 +37,8 @@ async function makeComment(req, res) {
 
 
     let updateComments = []
+
+    let updateRating=[]
          for (let i = 0; i<tutors.length; i++){  
             console.log(tutors[i].id)
             console.log('tutorID',tutorID)
@@ -48,6 +50,10 @@ async function makeComment(req, res) {
                     console.log('here inside for loop')
                     updateComments.push(tutors[i].comments[key])
                 }
+                for(const key in tutors[i].companyRatings){
+                    updateRating.push(parseInt(tutors[i].companyRatings[key]))
+                }
+
             }
     
             
@@ -55,11 +61,21 @@ async function makeComment(req, res) {
 
         } 
 
+    updateRating.push(rating)
+
+
+
+
+
+
 
     updateComments.push(comment)
-    console.log(updateComments)
+    console.log(updateRating)
     console.log('hereComment')
-    await axios.patch('https://ratemytutor-245e0-default-rtdb.firebaseio.com/tutor/'+tutorID+".json",{comments:updateComments} )
+    await axios.patch('https://ratemytutor-245e0-default-rtdb.firebaseio.com/tutor/'+tutorID+".json",{comments:updateComments, companyRatings:updateRating
+
+
+} )
     console.log("______________________________________") 
     
 
