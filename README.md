@@ -4,9 +4,9 @@ Rate My Tutor was created for the Hack The Northeast: Beyond Hackathon. This web
 ratings of private tutors. Students can add new tutors, or review existing tutors on the platform.
 
 # Contributors:
-Isfar Oshir
-Mohammed Uddin
-Farhan Masud
+### Isfar Oshir
+### Mohammed Uddin
+### Farhan Masud
 
 
 # Getting Started with Create React App
